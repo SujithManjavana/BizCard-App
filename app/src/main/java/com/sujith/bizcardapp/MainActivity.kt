@@ -3,13 +3,16 @@ package com.sujith.bizcardapp
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
@@ -51,18 +54,26 @@ fun BizCard() {
     ) {
         Card(
             modifier = Modifier
-                .width(200.dp)
+                .width(100.dp)
                 .height(390.dp)
                 .padding(12.dp),
             elevation = CardDefaults.cardElevation(
                 defaultElevation = 4.dp
             ),
-            colors = CardDefaults.cardColors(containerColor = Color.Green),
+            colors = CardDefaults.cardColors(containerColor = Color.White),
             shape = RoundedCornerShape(
                 CornerSize(15.dp),
             )
         ) {
+            Surface(modifier = Modifier
+                .size(150.dp)
+                .padding(5.dp),
+                shape = CircleShape,
+                border = BorderStroke(0.5.dp, Color.LightGray),
+                shadowElevation = 4.dp
+            ) {
 
+            }
         }
     }
 }
